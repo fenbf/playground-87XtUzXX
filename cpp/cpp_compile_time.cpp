@@ -7,7 +7,7 @@
 #include <memory>
 
 
-#include "gsl/gsl"
+#include "gsl/gsl
 
 class App
 {
