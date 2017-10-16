@@ -1,13 +1,13 @@
+// { autofold
 // not_null playground
 // bfilipek.com
 
-// { autofold
+
 #include <iostream>
 #include <string_view>
 #include <string>
 #include <memory>
 // }
-
 
 #include "gsl/gsl"
 
@@ -40,20 +40,25 @@ void DiagnoseApp(gsl::not_null<App *> pApp)
 
 int main()
 {
+    // first case: deleting and marking as null:
 	{
 		gsl::not_null<App *> myApp = new App("Poker");
 
 		// we can delete it, but cannot assign null
 		delete myApp;
-		myApp = nullptr;
+		//myApp = nullptr;
 	}
 
+    // second case: breaking the contract
 	{
 		// cannot invoke such function, contract violation
-		RunApp(nullptr);
+		//RunApp(nullptr);
 	}
 
+    // assigning a null on initilization
 	{
-		gsl::not_null<App *> myApp = nullptr;
+		//gsl::not_null<App *> myApp = nullptr;
 	}
+	
+	std::cout << "Finished...\n";
 }
