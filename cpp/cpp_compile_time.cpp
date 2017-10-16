@@ -1,14 +1,17 @@
 // not_null playground
 // bfilipek.com
 
+// { autofold
 #include <iostream>
 #include <string_view>
 #include <string>
 #include <memory>
+// }
 
 
-#include "gsl/gsl
+#include "gsl/gsl"
 
+// { autofold
 class App
 {
 public:
@@ -21,6 +24,7 @@ public:
 private:
 	std::string m_name;
 };
+// }
 
 
 void RunApp(gsl::not_null<App *> pApp)
